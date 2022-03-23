@@ -6,6 +6,8 @@ import com.example.test.InterfaceTest.ApiRick
 import com.example.test.data.dataItem
 import com.example.test.databinding.ActivityMainBinding
 import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
@@ -25,12 +27,9 @@ class MainActivity : AppCompatActivity() {
 
         val apiRick: ApiRick = retrofit.create(ApiRick::class.java)
 
-        Call<List<dataItem>>
+        //val messages: Call<List<dataItem?>?>? = apiRick.messages()
 
 
     }
 
-    override fun onResume() {
-        super.onResume()
-    }
 }
