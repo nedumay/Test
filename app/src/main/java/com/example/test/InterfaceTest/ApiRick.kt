@@ -12,3 +12,4 @@ interface ApiRick {
     fun messages(): Call<List<dataItem?>?>?
 
 }
+

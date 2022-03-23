@@ -3,18 +3,24 @@ package com.example.test
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.test.InterfaceTest.ApiRick
 import com.example.test.adapters.RecyclerAdapter
 import com.example.test.data.App
 import com.example.test.data.dataItem
 import com.example.test.databinding.ActivityMainBinding
+import retrofit2.Call
+import retrofit2.Callback
 import retrofit2.Response
-import java.io.IOException
+import retrofit2.Retrofit
+import retrofit2.converter.gson.GsonConverterFactory
 
 
 class MainActivity : AppCompatActivity() {
 
-    private val list: List<dataItem> = ArrayList<dataItem>()
-    lateinit var bindingMainActivity: ActivityMainBinding
+    lateinit var apiRick:ApiRick
+    lateinit var retrofit: Retrofit
+    private val list: List<dataItem> = ArrayList()
+    lateinit private var bindingMainActivity: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -24,10 +30,26 @@ class MainActivity : AppCompatActivity() {
         val layoutManager = LinearLayoutManager(this)
         bindingMainActivity.recyclerView.setLayoutManager(layoutManager)
 
-        val adapter: RecyclerAdapter = RecyclerAdapter(applicationContext, list)
+        val adapter = RecyclerAdapter(applicationContext, list)
         bindingMainActivity.recyclerView.adapter = adapter
 
 
+        retrofit = Retrofit.Builder()
+            .baseUrl("https://rickandmortyapi.com/api")
+            .addConverterFactory(GsonConverterFactory.create())
+            .build()
+
+        apiRick = retrofit.create(ApiRick::class.java)
+
+        val repos: Call<List<dataItem?>?>? = apiRick.messages()
+        bindingMainActivity.recyclerView.getAdapter()?.notifyDataSetChanged()
+
+    }
+
+    fun getApi(): ApiRick {
+        return apiRick
     }
 
 }
+
+

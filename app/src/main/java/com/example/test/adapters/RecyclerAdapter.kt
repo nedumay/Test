@@ -44,11 +44,11 @@ class RecyclerAdapter internal constructor(context: Context?, dataItem: List<dat
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val data: dataItem = dataItem[position]
-        holder.imageName.setImageURI(data.url)
+        //holder.imageName.setImageURI(data.image)
         holder.nameText.setText(data.name)
         holder.statusText.setText(data.status)
         holder.genderText.setText(data.gender)
-        holder.planetText.setText(data.location)
+        holder.planetText.setText(data.location.toString())
     }
 
     override fun getItemCount(): Int {

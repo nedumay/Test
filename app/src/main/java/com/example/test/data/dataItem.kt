@@ -1,11 +1,14 @@
 package com.example.test.data
 
-import android.net.Uri
+class dataItem{
 
-data class dataItem(
-    val name: String,
-    val status: String,
-    val gender: String,
-    val location: String,
-    val url: Uri
-)
+    var name: String? = null
+    var status: String? = null
+    var gender: String? = null
+    var location: Location? = null
+    var image:String? = null
+}
+
+class Location{
+    var name: String? = null
+}
