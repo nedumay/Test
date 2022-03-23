@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="characters">
+        <item name="android:textSize">
+            31sp
+        </item>
+        <item name="android:textColor">
+            #000000
+        </item>
+    </style>
+
+    <style name="rick_sanche">
+        <item name="android:textSize">
+            21sp
+        </item>
+        <item name="android:textColor">
+            #000000
+        </item>
+    </style>
+
+    <style name="human_male">
+        <item name="android:textSize">
+            14sp
+        </item>
+        <item name="android:textColor">
+            #000000
+        </item>
+    </style>
+
+    <style name="alive">
+        <item name="android:textSize">
+            14sp
+        </item>
+        <item name="android:textColor">
+            #319F16
+        </item>
+    </style>
+
+    <style name="watch_episo">
+        <item name="android:textSize">
+            14sp
+        </item>
+        <item name="android:textColor">
+            #FF6B00
+        </item>
+    </style>
+
+    <style name="earth_c_500">
+        <item name="android:textSize">
+            14sp
+        </item>
+        <item name="android:textColor">
+            #525252
+        </item>
+    </style>
+
+</resources>
