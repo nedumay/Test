@@ -1,10 +1,14 @@
 package com.example.test
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.test.adapters.RecyclerAdapter
+import androidx.appcompat.app.AppCompatActivity
+import com.example.test.InterfaceTest.ApiRick
+import com.example.test.data.dataItem
 import com.example.test.databinding.ActivityMainBinding
+import retrofit2.Call
+import retrofit2.Retrofit
+import retrofit2.converter.gson.GsonConverterFactory
+
 
 class MainActivity : AppCompatActivity() {
 
@@ -14,8 +18,16 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         bindingMainActivity = ActivityMainBinding.inflate(layoutInflater)
         setContentView(bindingMainActivity.root)
-        var linearLayoutManager: LinearLayoutManager = LinearLayoutManager(applicationContext)
-        bindingMainActivity.recyclerView.layoutManager
+        val retrofit = Retrofit.Builder()
+            .baseUrl("https://rickandmortyapi.com/api/character")
+            .addConverterFactory(GsonConverterFactory.create())
+            .build()
+
+        val apiRick: ApiRick = retrofit.create(ApiRick::class.java)
+
+        Call<List<dataItem>>
+
+
     }
 
     override fun onResume() {
