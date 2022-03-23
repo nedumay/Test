@@ -8,7 +8,7 @@ import retrofit2.http.Query
 
 
 interface ApiRick {
-    @GET("api/character")
+    @GET("character")
     fun messages(): Call<List<dataItem?>?>?
 
 }

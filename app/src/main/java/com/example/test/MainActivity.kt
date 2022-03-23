@@ -26,14 +26,6 @@ class MainActivity : AppCompatActivity() {
 
         val adapter: RecyclerAdapter = RecyclerAdapter(applicationContext, list)
         bindingMainActivity.recyclerView.adapter = adapter
-        
-        try{
-            val response: Response = App.getApi().getData("bash", 10).execute()
-        } catch (e: IOException){
-            e.printStackTrace()
-        }
-
-        App.
 
 
     }

@@ -13,7 +13,7 @@ class App : Application() {
         super.onCreate()
 
         val retrofit = Retrofit.Builder()
-            .baseUrl("https://rickandmortyapi.com/api/character")
+            .baseUrl("https://rickandmortyapi.com/api")
             .addConverterFactory(GsonConverterFactory.create())
             .build()
 
