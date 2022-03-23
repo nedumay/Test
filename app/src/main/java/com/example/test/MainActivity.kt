@@ -32,22 +32,6 @@ class MainActivity : AppCompatActivity() {
 
         val adapter = RecyclerAdapter(applicationContext, list)
         bindingMainActivity.recyclerView.adapter = adapter
-
-
-        retrofit = Retrofit.Builder()
-            .baseUrl("https://rickandmortyapi.com/api")
-            .addConverterFactory(GsonConverterFactory.create())
-            .build()
-
-        apiRick = retrofit.create(ApiRick::class.java)
-
-        val repos: Call<List<dataItem?>?>? = apiRick.messages()
-        bindingMainActivity.recyclerView.getAdapter()?.notifyDataSetChanged()
-
-    }
-
-    fun getApi(): ApiRick {
-        return apiRick
     }
 
 }
